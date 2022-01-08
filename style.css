@@ -74,6 +74,7 @@ section#pages > div {
   justify-content: center;
   align-items: center;
   font-size: 2rem;
+  transition: all 0.8s ease-in-out;
 }
 
 #page1 {
@@ -91,4 +92,24 @@ section#pages > div {
 }
 #page5 {
   background-color: var(--color-page5);
+}
+
+input#inp1:checked ~ div#page1 {
+  margin-left: 0;
+}
+
+input#inp2:checked ~ div#page1 {
+  margin-left: -20%;
+}
+
+input#inp3:checked ~ div#page1 {
+  margin-left: -40%;
+}
+
+input#inp4:checked ~ div#page1 {
+  margin-left: -60%;
+}
+
+input#inp5:checked ~ div#page1 {
+  margin-left: -80%;
 }
