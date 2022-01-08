@@ -1,5 +1,6 @@
 const pagination = document.querySelector("#pagination");
 // console.log(pagination);
+let pageCurrent = 1;
 
 pagination.addEventListener("click", (e) => {
   const item = e.target;
@@ -16,11 +17,7 @@ function setCheckedLabel(selectedPage) {
   const classLabels = document.querySelectorAll("#pagination > label");
   console.log(classLabels);
 
-  for (let i = 0; i < classLabels.length; i++) {
-    classLabels[i].classList.remove("lab-checkmark");
-
-    if (i + 1 === Number(selectedPage)) {
-      classLabels[i].classList.add("lab-checkmark");
-    }
-  }
+  classLabels[pageCurrent - 1].classList.remove("lab-checkmark");
+  classLabels[selectedPage - 1].classList.add("lab-checkmark");
+  pageCurrent = selectedPage;
 }
