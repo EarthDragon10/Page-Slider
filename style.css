@@ -4,6 +4,11 @@
 :root {
   --color-bg: crimson;
   --color-text-default: white;
+  --color-page1: #fe0058;
+  --color-page2: #fe00ea;
+  --color-page3: #8500ff;
+  --color-page4: #005cff;
+  --color-page5: #2e7a84;
 }
 
 * {
@@ -19,6 +24,12 @@ html {
   font-family: "Montserrat", sans-serif;
 }
 
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
 /* CODE OF PROJECT */
 
 input[type="radio"] {
@@ -49,4 +60,35 @@ section#pagination {
   bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
+}
+
+section#pages {
+  width: 500vw;
+  height: 100vh;
+  display: flex;
+}
+
+section#pages > div {
+  flex: 0 0 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+#page1 {
+  background-color: var(--color-page1);
+}
+
+#page2 {
+  background-color: var(--color-page2);
+}
+#page3 {
+  background-color: var(--color-page3);
+}
+#page4 {
+  background-color: var(--color-page4);
+}
+#page5 {
+  background-color: var(--color-page5);
 }
