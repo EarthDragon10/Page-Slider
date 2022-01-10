@@ -6,10 +6,10 @@
 
 - I am available to work.
 - I am a wearer of hearing aids.
-- I am currently learning React, in the future I will study Angular.
+- I am currently learning React, in the future I will study React.
 - Nice Facts: I'm trying to learn shuffledance.
 
-# Counter
+# Page-Slider
 
 ## Table of Contents
 
@@ -24,7 +24,9 @@
 
 # General Info
 
-### This is the count of Laguda Stefano.
+### This is the simply Page-Slider of Laguda Stefano.
+
+### Link: [Page-Slider](https://zen-mirzakhani-9a17a8.netlify.app/)
 
 # Description
 
@@ -56,4 +58,4 @@
 
 # Contact Information
 
-### E-mail: [laguda92@gmail.com](laguda92@gmail.com)
+### E-mail: [laguda92@gmail.com](lagudadev@gmail.com)
