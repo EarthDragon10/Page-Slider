@@ -9,28 +9,19 @@ let touchedEndX = 0;
 
 let pageCurrent = 0;
 
-pagination.addEventListener("click", (e) => {
+pagination.addEventListener("click", changePage);
+
+pages.addEventListener("touchstart", touchStart, false);
+pages.addEventListener("touchend", touchEnd, false);
+
+function changePage(e) {
   const item = e.target;
 
   if (item.nodeName === "LABEL") {
     console.log(item.dataset.page);
-    setCheckedLabel(item.dataset.page);
+    goToPage(item.dataset.page - 1);
   }
-
-  console.log(item.nodeName);
-});
-
-function setCheckedLabel(selectedPage) {
-  console.log(classLabels);
-
-  labelsGroup[pageCurrent - 1].classList.remove("lab-checkmark");
-  labelsGroup[selectedPage - 1].classList.add("lab-checkmark");
-
-  pageCurrent = selectedPage;
 }
-
-pages.addEventListener("touchstart", touchStart, false);
-pages.addEventListener("touchend", touchEnd, false);
 
 function touchStart(e) {
   touchedStartX = e.changedTouches[0].screenX;
@@ -45,16 +36,10 @@ function touchEnd(e) {
 }
 
 function moveTo(direction) {
-  if (direction === "next" && pageCurrent < labelsGroup.length) {
-    labelsGroup[pageCurrent - 1].classList.remove("lab-checkmark");
-    labelsGroup[pageCurrent].classList.add("lab-checkmark");
-    radioBtn[pageCurrent].checked = true;
-    pageCurrent++;
-  } else if (direction === "prev" && pageCurrent > 1) {
-    labelsGroup[pageCurrent - 1].classList.remove("lab-checkmark");
-    labelsGroup[pageCurrent - 2].classList.add("lab-checkmark");
-    radioBtn[pageCurrent - 2].checked = true;
-    pageCurrent--;
+  if (direction === "next" && pageCurrent < labelsGroup.length - 1) {
+    goToPage(pageCurrent + 1);
+  } else if (direction === "prev" && pageCurrent > 0) {
+    goToPage(pageCurrent - 1);
   }
 }
 
